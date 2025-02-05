@@ -4,6 +4,7 @@ namespace: linkding
 resources:
   - namespace.yaml
   - deployment.yaml
+  - storage.yaml
   
 
 

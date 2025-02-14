@@ -29,3 +29,22 @@ spec:
     - kind: ConfigMap
       name: kube-prometheus-stack-values
       optional: true
+    - kind: ConfigMap
+      name: kube-prometheus-stack-values-adminpassword
+      optional: true
+  # values:
+  #   grafana:
+  #     admin:
+  #       existingSecret: kube-prometheus-stack-container-env
+  #       passwordKey: GRAFANA_ADMIN_PASSWORD
+  #
+  #     ingress:
+  #       enabled: true
+  #       ingressClassName: traefik
+  #       hosts:
+  #         - grs.maslias.com
+
+  # tls:
+  #   - secretName: grafana-tls-secret
+  #     hosts:
+  #       - grs.maslias.com

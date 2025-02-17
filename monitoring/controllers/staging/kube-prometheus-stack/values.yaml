@@ -1,0 +1,17 @@
+alertmanager:
+  enabled: false
+grafana:
+  admin:
+    existingSecret: kube-prometheus-stack-grafana-secret
+    passwordKey: GF_SECRET_ADMIN_PASSWORD
+    userKey: GF_SECRET_ADMIN_USER
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hosts:
+      - grs.maslias.com
+    #
+    # tls:
+    #   - secretName: grafana-tls-secret
+    #     hosts:
+    #       - grs.maslias.com

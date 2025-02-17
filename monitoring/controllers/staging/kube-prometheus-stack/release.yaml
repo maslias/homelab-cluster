@@ -3,17 +3,22 @@ kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
 spec:
+  valuesFrom:
+    - kind: ConfigMap
+      name: kube-prometheus-stack-values
+
   interval: 30m
+
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: "66.2.2"
-
+      version: "68.x"
       sourceRef:
         kind: HelmRepository
         name: kube-prometheus-stack
         namespace: monitoring
       interval: 12h
+
   install:
     crds: Create
   upgrade:
@@ -25,7 +30,19 @@ spec:
       - paths: ["/metadata/annotations/prometheus-operator-validated"]
         target:
           kind: PrometheusRule
-  valuesFrom:
-    - kind: ConfigMap
-      name: kube-prometheus-stack-values
-      optional: true
+  # - kind: ConfigMap
+  #   name: kube-prometheus-stack-values-adminpassword
+  #   optional: true
+  # values:
+  #   grafana:
+  #     envFromSecret: grafana-env
+  #     ingress:
+  #       enabled: true
+  #       ingressClassName: traefik
+  #       hosts:
+  #         - grs.maslias.com
+
+  # tls:
+  #   - secretName: grafana-tls-secret
+  #     hosts:
+  #       - grs.maslias.com

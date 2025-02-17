@@ -3,7 +3,8 @@
 this is my homelab kubernetes cluster github repo.
 the homelab runs flux as th gitops controller. for that i have this repo to maintain my homelab cluster.
 
-kubernetes cluster based on:
+### setup
 
-- k3s
-- flux as gitops controller
+- kubernetes distrobution: [k3s](https://k3s.io/)
+- gitops controller: [flux](https://fluxcd.io/)
+- monitoring: [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)

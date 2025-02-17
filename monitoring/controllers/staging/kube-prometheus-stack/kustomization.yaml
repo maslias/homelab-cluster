@@ -5,7 +5,8 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
-  - secrets.yaml
+  - admin-secret.yaml
+  - tls-secret.yaml
 
 configMapGenerator:
   - name: kube-prometheus-stack-values

@@ -10,8 +10,8 @@ grafana:
     ingressClassName: traefik
     hosts:
       - grs.maslias.com
-    #
-    # tls:
-    #   - secretName: grafana-tls-secret
-    #     hosts:
-    #       - grs.maslias.com
+
+    tls:
+      - secretName: grafana-tls-secret
+        hosts:
+          - grs.maslias.com

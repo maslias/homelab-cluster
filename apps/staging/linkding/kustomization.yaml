@@ -11,5 +11,6 @@ configMapGenerator:
   - name: cloudflare-values
     files:
       - config.yaml=cloudflare-config.yaml
+
 configurations:
   - kustomize-config.yaml

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linkding
+  template:
+    metadata:
+      labels:
+        app: linkding
+    spec:
+      securityContext:
+        fsGroup: 33
+        runAsUser: 33
+        runAsGroup: 33
+      volumes:
+        - name: linkding-data
+          persistentVolumeClaim:
+            claimName: linkding-data-pvc
+      containers:
+        - image: sissbruecker/linkding:v1.36.0
+          name: linkding
+          ports:
+            - containerPort: 9090
+          securityContext:
+            allowPrivilegeEscalation: false
+          volumeMounts:
+            - name: linkding-data
+              mountPath: /etc/linkding/data

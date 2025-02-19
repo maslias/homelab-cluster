@@ -1,0 +1,7 @@
+tunnel: lds
+credentials-file: /etc/cloudflared/creds/credentials.json
+metrics: 0.0.0.0:2000
+no-autoupdate: true
+ingress:
+  - hostname: lds.maslias.com
+    service: http://linkding:9090

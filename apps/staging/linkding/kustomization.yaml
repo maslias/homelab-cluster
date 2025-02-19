@@ -3,3 +3,14 @@ kind: Kustomization
 namespace: linkding
 resources:
   - ../../base/linkding/
+  - linkding-env-secret.yaml
+  - cloudflare-secret.yaml
+  - linkding-env-secret.yaml
+  - cloudflare.yaml
+
+configMapGenerator:
+  - name: cloudflare-values
+    files:
+      - config.yaml=cloudflare-config.yaml
+configurations:
+  - kustomize-config.yaml

@@ -21,7 +21,7 @@ spec:
           persistentVolumeClaim:
             claimName: linkding-data-pvc
       containers:
-        - image: sissbruecker/linkding:v1.36.0
+        - image: sissbruecker/linkding:1.36.0
           name: linkding
           ports:
             - containerPort: 9090
